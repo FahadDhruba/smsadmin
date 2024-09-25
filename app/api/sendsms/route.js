@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
 const SMS_API_URL = 'http://bulksmsbd.net/api/smsapi';
-const API_KEY = 'QeMImRawwemoXYzvbFIH'; // Replace with your actual API key
-const SENDER_ID = '8809604902359'; // Replace with your actual sender ID
+const API_KEY = process.env.API_KEY; // Replace with your actual API key
+const SENDER_ID = process.env.SENDER_ID; // Replace with your actual sender ID
 
 async function sendSMS(number, message) {
   const response = await fetch(SMS_API_URL, {
